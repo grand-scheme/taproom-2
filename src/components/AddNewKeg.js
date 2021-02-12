@@ -4,12 +4,6 @@ import { v4 } from 'uuid' ;
 function AddNewKeg(){
   function handleNewKegSubmission(e){
     e.preventDefault();
-    console.log(e.target.kegId.value);
-    console.log(e.target.name.value);
-    console.log(e.target.brandName.value);
-    console.log(e.target.price.value);
-    console.log(e.target.abv.value);
-    console.log(e.target.inventory.value);
   }
 
   return(
