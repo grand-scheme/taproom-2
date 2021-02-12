@@ -5,7 +5,7 @@ import {kegsList} from '../data/kegs'
 function KegList(){
   return(
     <>
-      {kegsList.map((keg, index) =>
+      {kegsList.map((keg) =>
       <Keg 
           kegId={keg.kegId}
           name={keg.name}
@@ -13,7 +13,7 @@ function KegList(){
           price={keg.price}
           abv={keg.abv}
           inventory={keg.inventory}
-          key={index}
+          key={keg.kegId}
         />
         )}
       <hr />
