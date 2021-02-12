@@ -1,7 +1,9 @@
 // until databasing / Live State is involved, this is a hard-coded "database" of kegs for the taproom //
+import { v4 } from 'uuid' ;
+
 export const kegsList = [
   { 
-    kegId: 1, 
+    kegId: v4(), 
     name: "Alpha", 
     brandName: "Get Kegged", 
     price: 4.5, 
@@ -9,7 +11,7 @@ export const kegsList = [
     inventory: 100
   },
   { 
-    kegId: 2, 
+    kegId: v4(), 
     name: "Beta", 
     brandName: "Get Kegged", 
     price: 7, 
@@ -17,7 +19,7 @@ export const kegsList = [
     inventory: 90
   },
   { 
-    kegId: 3, 
+    kegId: v4(), 
     name: "Gamma", 
     brandName: "Get Kegged", 
     price: 9, 
@@ -25,7 +27,7 @@ export const kegsList = [
     inventory: 55
   },
   { 
-    kegId: 4, 
+    kegId: v4(), 
     name: "Delta", 
     brandName: "Beveragy Hills", 
     price: 9, 
@@ -33,7 +35,7 @@ export const kegsList = [
     inventory: 32
   },
   { 
-    kegId: 5, 
+    kegId: v4(), 
     name: "Epsilon", 
     brandName: "Beveragy Hills", 
     price: 6.5, 
