@@ -1,16 +1,16 @@
 import React from 'react';
 import Nav from './Nav';
 import Header from './Header';
-import KegList from './KegList';
+import KegController from './KegController';
 
 function App() {
   return (
     <>
       <Nav />
       <Header />
-      <KegList />
+      <KegController />
     </>
-    );
+  );
 }
 
 export default App;
