@@ -8,19 +8,19 @@ function KegList(props){
     <>
       {kegsList.map((keg) =>
       <Keg 
-          kegId={keg.kegId}
+          id={keg.id}
           name={keg.name}
           brandName={keg.brandName}
           price={keg.price}
           abv={keg.abv}
           inventory={keg.inventory}
-          key={keg.kegId}
+          key={keg.id}
         />
         )}
 
         {props.OO_kegList.map((OO_keg, index) =>
           <Keg
-            kegId={OO_keg.kegId}
+            id={OO_keg.id}
             name={OO_keg.name}
             brandName={OO_keg.brandName}
             price={OO_keg.price}

@@ -11,7 +11,7 @@ function AddNewKeg(props){
       price: e.target.price.value,
       abv: e.target.abv.value,
       inventory: e.target.inventory.value,
-      kegId: e.target.kegId.value
+      id: e.target.id.value
     });
   }
 
@@ -19,10 +19,10 @@ function AddNewKeg(props){
     <>
       <h1>AddNewKeg placeholder</h1>
       <form onSubmit={handleNewKegSubmission}>
-        {/* kegId={v4} */}
+        {/* id={v4} */}
         <input 
           type='hidden'
-          name="kegId"
+          name="id"
           value= {v4()}
         />
         <input 

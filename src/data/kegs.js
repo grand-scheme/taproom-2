@@ -3,7 +3,7 @@ import { v4 } from 'uuid' ;
 
 export const kegsList = [
   { 
-    kegId: v4(), 
+    id: v4(), 
     name: "Alpha", 
     brandName: "Get Kegged", 
     price: 4.5, 
@@ -11,7 +11,7 @@ export const kegsList = [
     inventory: 100
   },
   { 
-    kegId: v4(), 
+    id: v4(), 
     name: "Beta", 
     brandName: "Get Kegged", 
     price: 7, 
@@ -19,7 +19,7 @@ export const kegsList = [
     inventory: 90
   },
   { 
-    kegId: v4(), 
+    id: v4(), 
     name: "Gamma", 
     brandName: "Get Kegged", 
     price: 9, 
@@ -27,7 +27,7 @@ export const kegsList = [
     inventory: 55
   },
   { 
-    kegId: v4(), 
+    id: v4(), 
     name: "Delta", 
     brandName: "Beveragy Hills", 
     price: 9, 
@@ -35,7 +35,7 @@ export const kegsList = [
     inventory: 32
   },
   { 
-    kegId: v4(), 
+    id: v4(), 
     name: "Epsilon", 
     brandName: "Beveragy Hills", 
     price: 6.5, 
