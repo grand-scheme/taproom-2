@@ -5,7 +5,9 @@ import KegList from './KegList';
 class KegController extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      visibleNewKegForm: false
+    };
   }
   render(){
     return(
