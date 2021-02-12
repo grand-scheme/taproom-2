@@ -10,9 +10,16 @@ class KegController extends React.Component{
     };
   }
   render(){
+    let currentVisibleState = null;
+    if (this.state.visibleNewKegForm) {
+      currentVisibleState = <AddNewKeg />
+    } else {
+      currentVisibleState = <KegList />
+    }
     return(
       <>
         <h1>KegController placeholder</h1>
+        {currentVisibleState}
       </>
     );
   }
