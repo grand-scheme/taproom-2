@@ -2,17 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function KegDetail(props){
-  const { NN_ticket } = props;
+  const { OO_keg } = props;
   return(
     <>
       <h1>placeholder for details</h1>
-      {NN_ticket.name}
+      {OO_keg.name}
     </>
   );
 }
 
 KegDetail.propTypes = {
-  NN_ticket: PropTypes.object
+  OO_keg: PropTypes.object
 };
 
 export default KegDetail;
