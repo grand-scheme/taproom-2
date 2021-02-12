@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Keg(props){
   return(
     <>
-      <h1>Keg placeholder</h1>
+      <hr />
       <h2>{props.name}</h2>
     </>
   );
