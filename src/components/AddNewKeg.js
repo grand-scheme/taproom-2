@@ -8,9 +8,9 @@ function AddNewKeg(props){
     props.OO_onNewKegCreation({
       name: e.target.name.value,
       brandName: e.target.brandName.value,
-      price: e.target.price.value,
-      abv: e.target.abv.value,
-      inventory: e.target.inventory.value,
+      price: parseInt(e.target.price.value),
+      abv: parseInt(e.target.abv.value),
+      inventory: parseInt(e.target.inventory.value),
       id: e.target.id.value
     });
   }
