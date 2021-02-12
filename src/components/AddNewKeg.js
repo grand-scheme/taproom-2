@@ -1,9 +1,18 @@
 import React from 'react';
 import { v4 } from 'uuid' ;
+import PropTypes from "prop-types";
 
-function AddNewKeg(){
+function AddNewKeg(props){
   function handleNewKegSubmission(e){
     e.preventDefault();
+    props.OO_onNewKegCreation({
+      name: e.target.name.value,
+      brandName: e.target.brandName.value,
+      price: e.target.price.value,
+      abv: e.target.abv.value,
+      inventory: e.target.inventory.value,
+      kegId: e.target.kegId.value
+    });
   }
 
   return(
@@ -46,5 +55,9 @@ function AddNewKeg(){
     </>
   );
 }
+
+AddNewKeg.propTypes = {
+  OO_onNewKegCreation: PropTypes.func
+};
 
 export default AddNewKeg;
