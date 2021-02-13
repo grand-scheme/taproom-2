@@ -1,7 +1,7 @@
 // until databasing / Live State is involved, this is a hard-coded "database" of kegs for the taproom //
 import { v4 } from 'uuid' ;
 
-export const kegsList = [
+export const kegInventory = [
   { 
     id: v4(), 
     name: "Alpha", 
