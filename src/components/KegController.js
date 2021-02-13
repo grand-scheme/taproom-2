@@ -12,16 +12,16 @@ class KegController extends React.Component{
       visibleNewKegForm: false,
       visibleEditKegForm: false,
       kegListAll: kegsList,
-      OO_selectedKeg: null
+      selectedKeg: null
     };
   }
 
   handleClick = () => {
-    if (this.state.OO_selectedKeg != null) {
+    if (this.state.selectedKeg != null) {
       this.setState({
         visibleEditKegForm: false,
         visibleNewKegForm: false,
-        OO_selectedKeg: null
+        selectedKeg: null
       });
     } else {
       this.setState(prevState => ({
@@ -43,9 +43,9 @@ class KegController extends React.Component{
   }
 
   handleChangeSelection = (id) => {
-    const OO_selectedKeg = this.state.kegListAll.filter(keg => keg.id === id)[0];
+    const selectedKeg = this.state.kegListAll.filter(keg => keg.id === id)[0];
     this.setState({
-      OO_selectedKeg: OO_selectedKeg
+      selectedKeg: selectedKeg
     });
   }
 
@@ -53,18 +53,18 @@ class KegController extends React.Component{
     const newKegListAll = this.state.kegListAll.filter(keg => keg.id !== id);
     this.setState({
       kegListAll: newKegListAll,
-      OO_selectedKeg: null
+      selectedKeg: null
     });
   }
 
   handleEditKeg = (kegToModify) => {
     const modifiedKegList = this.state.kegListAll
-      .filter(keg => keg.id !== this.state.OO_selectedKeg.id)
+      .filter(keg => keg.id !== this.state.selectedKeg.id)
       .concat(kegToModify);
     this.setState({
       kegListAll: modifiedKegList,
       visibleEditKegForm: false,
-      OO_selectedKeg: null
+      selectedKeg: null
     });
   }
 
@@ -78,14 +78,14 @@ class KegController extends React.Component{
 
     if (this.state.visibleEditKegForm) {
       currentVisibleState = <ModifyKegList
-        keg = {this.state.OO_selectedKeg}
+        keg = {this.state.selectedKeg}
         onUpdateKeg = {this.handleEditKeg}
         />
         addKegBtnText = "View Kegs on Tap"
-    } else if (this.state.OO_selectedKeg !=null) {
+    } else if (this.state.selectedKeg !=null) {
       currentVisibleState = 
       <KegDetail 
-        keg = {this.state.OO_selectedKeg} 
+        keg = {this.state.selectedKeg} 
         onClickingDelete = {this.handleDeletingKeg}
         onClickingEdit = {this.handleEditClick}
       />
