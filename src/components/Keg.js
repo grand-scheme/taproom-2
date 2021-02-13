@@ -5,8 +5,7 @@ function Keg(props){
   return(
     <>
       <div onClick = {() => props.OO_whenClickKeg(props.id)}>
-        <h2>{props.name} - {props.brandName}</h2>
-        <p>{props.abv}</p>
+        <h2>{props.name}</h2>
       </div>
     </>
   );

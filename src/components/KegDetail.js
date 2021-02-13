@@ -6,7 +6,8 @@ function KegDetail(props){
   return(
     <>
       <h1>placeholder for details</h1>
-      {OO_keg.name}
+      <h2>{OO_keg.name} - {OO_keg.brandName}</h2>
+        <p>{OO_keg.abv}</p>
     </>
   );
 }
