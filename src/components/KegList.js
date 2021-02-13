@@ -1,12 +1,12 @@
 import React from 'react';
 import Keg from './Keg';
-import {kegsList} from '../data/kegs'
+// import {kegsList} from '../data/kegs'
 import PropTypes from "prop-types";
 
 function KegList(props){
   return(
     <>
-      {kegsList.map((keg) =>
+      {/* {kegsList.map((keg) =>
       <Keg 
           OO_whenClickKeg = { props.OO_onKegSelection }
           id={keg.id}
@@ -17,7 +17,7 @@ function KegList(props){
           inventory={keg.inventory}
           key={keg.id}
         />
-        )}
+        )} */}
 
         {props.OO_kegList.map((OO_keg) =>
           <Keg
