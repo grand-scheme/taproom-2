@@ -43,14 +43,14 @@ class KegController extends React.Component{
   }
 
   OO_handleChangeSelectedKeg = (id) => {
-    const OO_selectedKeg = this.state.OO_fullKegList.filter(OO_keg => OO_keg.id === id)[0];
+    const OO_selectedKeg = this.state.OO_fullKegList.filter(keg => keg.id === id)[0];
     this.setState({
       OO_selectedKeg: OO_selectedKeg
     });
   }
 
   handleDeletingKeg = (id) => {
-    const OO_newFullKegList = this.state.OO_fullKegList.filter(OO_keg => OO_keg.id !== id);
+    const OO_newFullKegList = this.state.OO_fullKegList.filter(keg => keg.id !== id);
     this.setState({
       OO_fullKegList: OO_newFullKegList,
       OO_selectedKeg: null
@@ -85,7 +85,7 @@ class KegController extends React.Component{
     } else if (this.state.OO_selectedKeg !=null) {
       currentVisibleState = 
       <KegDetail 
-        OO_keg = {this.state.OO_selectedKeg} 
+        keg = {this.state.OO_selectedKeg} 
         onClickingDelete = {this.handleDeletingKeg}
         onClickingEdit = {this.handleEditClick}
       />
