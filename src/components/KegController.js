@@ -94,7 +94,7 @@ class KegController extends React.Component{
       currentVisibleState = <AddNewKeg onCreateNewKeg={this.OO_handleAddingKegToList} />
       addKegBtnText = "View Kegs on Tap"
     } else {
-      currentVisibleState = <KegList OO_kegList={this.state.OO_fullKegList} OO_onKegSelection={this.OO_handleChangeSelectedKeg} />
+      currentVisibleState = <KegList OO_kegList={this.state.OO_fullKegList} onSelectKeg={this.OO_handleChangeSelectedKeg} />
       addKegBtnText = "Add Keg to Inventory"
         }
     return(
