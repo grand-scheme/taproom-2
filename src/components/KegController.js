@@ -35,9 +35,9 @@ class KegController extends React.Component{
   }
 
   handleAddKegToList = (OO_newKeg) => {
-    const OO_newFullKegList = this.state.kegListAll.concat(OO_newKeg);
+    const newKegListAll = this.state.kegListAll.concat(OO_newKeg);
     this.setState({
-      kegListAll: OO_newFullKegList,
+      kegListAll: newKegListAll,
       visibleNewKegForm: false
     });
   }
@@ -50,9 +50,9 @@ class KegController extends React.Component{
   }
 
   handleDeletingKeg = (id) => {
-    const OO_newFullKegList = this.state.kegListAll.filter(keg => keg.id !== id);
+    const newKegListAll = this.state.kegListAll.filter(keg => keg.id !== id);
     this.setState({
-      kegListAll: OO_newFullKegList,
+      kegListAll: newKegListAll,
       OO_selectedKeg: null
     });
   }
