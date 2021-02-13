@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function KegList(props){
   return(
     <>
-      {props.OO_kegList.map((keg) =>
+      {props.kegList.map((keg) =>
         <Keg
           OO_whenClickKeg = { props.onSelectKeg }
           id={keg.id}
@@ -23,7 +23,7 @@ function KegList(props){
 }
 
 KegList.propTypes = {
-  OO_kegList: PropTypes.array,
+  kegList: PropTypes.array,
   onSelectKeg: PropTypes.func
 };
 export default KegList;
