@@ -3,6 +3,7 @@ import AddNewKeg from './AddNewKeg';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
 import ModifyKegList from './ModifyKegList';
+import {kegsList} from '../data/kegs'
 
 class KegController extends React.Component{
   constructor(props) {
@@ -10,7 +11,7 @@ class KegController extends React.Component{
     this.state = {
       visibleNewKegForm: false,
       visibleEditKegForm: false,
-      OO_fullKegList: [],
+      OO_fullKegList: kegsList,
       OO_selectedKeg: null
     };
   }
