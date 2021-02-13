@@ -22,7 +22,6 @@ function KegList(props){
   );
 }
 
-// Add propTypes for OO_kegList
 KegList.propTypes = {
   OO_kegList: PropTypes.array,
   OO_onKegSelection: PropTypes.func
