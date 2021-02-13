@@ -34,8 +34,8 @@ class KegController extends React.Component{
     this.setState({visibleEditKegForm: true});
   }
 
-  handleAddKegToList = (OO_newKeg) => {
-    const newKegListAll = this.state.kegListAll.concat(OO_newKeg);
+  handleAddKegToList = (newKeg) => {
+    const newKegListAll = this.state.kegListAll.concat(newKeg);
     this.setState({
       kegListAll: newKegListAll,
       visibleNewKegForm: false
