@@ -79,7 +79,7 @@ class KegController extends React.Component{
     if (this.state.visibleEditKegForm) {
       currentVisibleState = <ModifyKegList
         keg = {this.state.OO_selectedKeg}
-        OO_onKegModification = {this.handleEditKeg}
+        onUpdateKeg = {this.handleEditKeg}
         />
         addKegBtnText = "View Kegs on Tap"
     } else if (this.state.OO_selectedKeg !=null) {

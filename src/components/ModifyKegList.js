@@ -7,7 +7,7 @@ function ModifyKegList(props){
   
   function handleEditKegSubmission(e){
     e.preventDefault();
-    props.OO_onKegModification({
+    props.onUpdateKeg({
       name: e.target.name.value,
       brandName: e.target.brandName.value,
       price: parseInt(e.target.price.value),
@@ -29,7 +29,7 @@ function ModifyKegList(props){
 
 ModifyKegList.propTypes = {
   keg: PropTypes.object,
-  OO_onKegModification: PropTypes.func
+  onUpdateKeg: PropTypes.func
 };
 
 export default ModifyKegList;
