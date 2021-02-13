@@ -11,7 +11,7 @@ class KegController extends React.Component{
     this.state = {
       visibleNewKegForm: false,
       visibleEditKegForm: false,
-      OO_fullKegList: kegsList,
+      kegListAll: kegsList,
       OO_selectedKeg: null
     };
   }
@@ -35,34 +35,34 @@ class KegController extends React.Component{
   }
 
   OO_handleAddingKegToList = (OO_newKeg) => {
-    const OO_newFullKegList = this.state.OO_fullKegList.concat(OO_newKeg);
+    const OO_newFullKegList = this.state.kegListAll.concat(OO_newKeg);
     this.setState({
-      OO_fullKegList: OO_newFullKegList,
+      kegListAll: OO_newFullKegList,
       visibleNewKegForm: false
     });
   }
 
   OO_handleChangeSelectedKeg = (id) => {
-    const OO_selectedKeg = this.state.OO_fullKegList.filter(keg => keg.id === id)[0];
+    const OO_selectedKeg = this.state.kegListAll.filter(keg => keg.id === id)[0];
     this.setState({
       OO_selectedKeg: OO_selectedKeg
     });
   }
 
   handleDeletingKeg = (id) => {
-    const OO_newFullKegList = this.state.OO_fullKegList.filter(keg => keg.id !== id);
+    const OO_newFullKegList = this.state.kegListAll.filter(keg => keg.id !== id);
     this.setState({
-      OO_fullKegList: OO_newFullKegList,
+      kegListAll: OO_newFullKegList,
       OO_selectedKeg: null
     });
   }
 
   handleEditKeg = (kegToModify) => {
-    const modifiedKegList = this.state.OO_fullKegList
+    const modifiedKegList = this.state.kegListAll
       .filter(keg => keg.id !== this.state.OO_selectedKeg.id)
       .concat(kegToModify);
     this.setState({
-      OO_fullKegList: modifiedKegList,
+      kegListAll: modifiedKegList,
       visibleEditKegForm: false,
       OO_selectedKeg: null
     });
@@ -94,7 +94,7 @@ class KegController extends React.Component{
       currentVisibleState = <AddNewKeg onCreateNewKeg={this.OO_handleAddingKegToList} />
       addKegBtnText = "View Kegs on Tap"
     } else {
-      currentVisibleState = <KegList OO_kegList={this.state.OO_fullKegList} onSelectKeg={this.OO_handleChangeSelectedKeg} />
+      currentVisibleState = <KegList OO_kegList={this.state.kegListAll} onSelectKeg={this.OO_handleChangeSelectedKeg} />
       addKegBtnText = "Add Keg to Inventory"
         }
     return(
