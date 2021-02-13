@@ -5,7 +5,7 @@ import Form from "./Form";
 function AddNewKeg(props){
   function handleNewKegSubmission(e){
     e.preventDefault();
-    props.OO_onNewKegCreation({
+    props.onCreateNewKeg({
       name: e.target.name.value,
       brandName: e.target.brandName.value,
       price: parseInt(e.target.price.value),
@@ -26,7 +26,7 @@ function AddNewKeg(props){
 }
 
 AddNewKeg.propTypes = {
-  OO_onNewKegCreation: PropTypes.func
+  onCreateNewKeg: PropTypes.func
 };
 
 export default AddNewKeg;
