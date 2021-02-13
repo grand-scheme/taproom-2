@@ -8,6 +8,7 @@ class KegController extends React.Component{
     super(props);
     this.state = {
       visibleNewKegForm: false,
+      visibleEditKegForm: false,
       OO_fullKegList: [],
       OO_selectedKeg: null
     };
@@ -41,7 +42,7 @@ class KegController extends React.Component{
     });
   }
 
-  handleDeletingTicket = (id) => {
+  handleDeletingKeg = (id) => {
     const OO_newFullKegList = this.state.OO_fullKegList.filter(OO_keg => OO_keg.id !== id);
     this.setState({
       OO_fullKegList: OO_newFullKegList,
@@ -58,7 +59,7 @@ class KegController extends React.Component{
     let addKegBtnText = null;
 
     if (this.state.OO_selectedKeg !=null) {
-      currentVisibleState = <KegDetail OO_keg = {this.state.OO_selectedKeg} onClickingDelete = {this.handleDeletingTicket} />
+      currentVisibleState = <KegDetail OO_keg = {this.state.OO_selectedKeg} onClickingDelete = {this.handleDeletingKeg} />
       addKegBtnText = "View Kegs on Tap";
     } else if (this.state.visibleNewKegForm) {
       currentVisibleState = <AddNewKeg OO_onNewKegCreation={this.OO_handleAddingKegToList} />
