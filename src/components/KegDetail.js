@@ -11,7 +11,6 @@ function KegDetail(props){
         entryFlag=""
         keg={keg}/>
 
-        {/* TODO */}
         <button onClick={()=> onClickingSell(keg.id) }>
           Sell Pint
         </button>
@@ -19,6 +18,7 @@ function KegDetail(props){
         <button onClick={()=> onClickingEdit(keg.id) }>
           Edit Keg
         </button>
+        
         <button onClick={()=> onClickingDelete(keg.id) }>
           Delete Keg
         </button>
