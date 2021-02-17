@@ -15,8 +15,8 @@ function KegList(props){
           abv={keg.abv}
           inventory={keg.inventory}
           key={keg.id}
-          />
-        )}
+        />
+      )}
       <hr />
     </>
   );
@@ -26,4 +26,5 @@ KegList.propTypes = {
   kegList: PropTypes.array,
   onSelectKeg: PropTypes.func
 };
+
 export default KegList;
