@@ -17,7 +17,7 @@ function AddNewKeg(props){
 
   return(
     <>
-      <h1>AddNewKeg placeholder</h1>
+      <h1>Add new keg to inventory</h1>
       <Form 
         formSubmissionHandler={handleNewKegSubmission} buttonText="Add New Keg"
       />
