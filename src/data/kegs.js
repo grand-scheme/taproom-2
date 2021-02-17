@@ -1,4 +1,4 @@
-// until databasing / Live State is involved, this is a hard-coded "database" of kegs for the taproom //
+// NOTE: until a database is included, this file is here to instantiate preliminary entries in the Keg Inventory. //
 import { v4 } from 'uuid' ;
 
 export const kegInventory = [
