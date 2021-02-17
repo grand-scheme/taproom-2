@@ -35,12 +35,9 @@ class KegController extends React.Component{
   }
 
   handleSellClick = () => {
-    const pint = this.state.selectedKeg.inventory;
-    console.log("clicked sell");
-    console.log(pint);
-      if (this.state.selectedKeg.inventory > 0) {
-        console.log(this.state.selectedKeg.inventory)
-      }
+    if (this.state.selectedKeg.inventory > 0) {
+      this.state.selectedKeg.inventory--;
+    }
     this.setState({
     });
   }
