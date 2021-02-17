@@ -34,6 +34,17 @@ class KegController extends React.Component{
     this.setState({visibleEditKegForm: true});
   }
 
+  handleSellClick = () => {
+    const pint = this.state.selectedKeg.inventory;
+    console.log("clicked sell");
+    console.log(pint);
+      if (this.state.selectedKeg.inventory > 0) {
+        console.log(this.state.selectedKeg.inventory)
+      }
+    this.setState({
+    });
+  }
+
   handleAddKegToList = (newKeg) => {
     const newKegListAll = this.state.kegListAll.concat(newKeg);
     this.setState({
@@ -88,6 +99,7 @@ class KegController extends React.Component{
         keg = {this.state.selectedKeg} 
         onClickingDelete = {this.handleDeletingKeg}
         onClickingEdit = {this.handleEditClick}
+        onClickingSell = {this.handleSellClick}
       />
       addKegBtnText = "View Kegs on Tap";
     } else if (this.state.visibleNewKegForm) {
