@@ -17,17 +17,21 @@ function ModifyKegList(props){
       id: keg.id
     });
   }
+
   return(
     <>
       <p>
         <Information 
           entryFlag="Modifying Information For: "
-          keg={keg}/>
-        </p>
-      <Form 
-        formSubmissionHandler={handleEditKegSubmission} 
-        buttonText="Modify Keg Details"
-      />
+          keg={keg}
+        />
+      </p>
+      <p>
+        <Form 
+          formSubmissionHandler={handleEditKegSubmission} 
+          buttonText="Modify Keg Details"
+        />
+      </p>
     </>
   );
 }
