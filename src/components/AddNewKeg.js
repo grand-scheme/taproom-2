@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import Form from "./Form";
+import Form from "./reusable/Form";
 
 function AddNewKeg(props){
   function handleNewKegSubmission(e){
