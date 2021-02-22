@@ -11,35 +11,35 @@ function Form(props){
           name="id"
           value= {v4()}
         />
-        <label for="name">Brew Name: </label>
+        <label htmlFor="name">Brew Name: </label>
         <input 
           type='text'
           name="name"
           placeholder="Brew Name"
         />
         <br />
-        <label for="brandName">Brewing Company Brand Name: </label>
+        <label htmlFor="brandName">Brewing Company Brand Name: </label>
         <input 
           type='text'
           name="brandName"
           placeholder="Brand Name"
         />
         <br />
-        <label for="price">$: </label>
+        <label htmlFor="price">$: </label>
         <input 
           type='text'
           name="price"
           placeholder="Price per Pint"
         />
         <br />
-        <label for="abv">ABV: </label>
+        <label htmlFor="abv">ABV: </label>
         <input 
           type='text'
           name="abv"
           placeholder="Alcohol by Volume"
         />
         <br />
-        <label for="inventory">Inventory In Stock: </label>
+        <label htmlFor="inventory">Inventory In Stock: </label>
         <input 
           type='text'
           name="inventory"
