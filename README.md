@@ -11,6 +11,8 @@ This website is a React-built application allowing a user to view the draft menu
 The application is structured as pictured below:
 
 ![image](.\diagram\diagram.png)
+
+(Text description for this image will be provided at a later date).
 ----------------------
 ## Project Criteria:  
 
@@ -30,10 +32,10 @@ As referenced from the [Epicodus](https://epicodus.com) program's curriculum:
 
 -------------------------------
 ## Known Issues / Current Bugs:
-
+- None known
 -------------------------------
 ## Bug log:
-
+- Used the wrong declaration in the `<label>` tags. Fixed.
 -------------------------------
 ## Setup:
 
@@ -69,7 +71,7 @@ For more step-by-step instructions on installation, please visit [this Epicodus 
 4. This will clone the project to a folder called "taproom." If you wish to clone it into a directory of a different name, append the new folder name to the end of the string, like so:\
 `$ git clone https://github.com/grand-scheme/taproom NEW-FOLDER`\
 where `NEW-FOLDER` is where you would type the name of the folder you would like to use.\
-**Note:** It is highly recommended that your destination folder retains the name `taproom`.  
+**Note:** It is highly recommended that your destination folder retains the name `taproom`. It is recommended not to use special characters in your file name paths. 
 
 5. Directions were accurate as this project's latest update. If GitHub has since changed their protocol, please see [the GitHub help docs](https://docs.github.com/en) for up-to-date information.
 
@@ -78,16 +80,14 @@ where `NEW-FOLDER` is where you would type the name of the folder you would like
  
 1. Once you have the project locally stored, navigate to its main directory in your terminal of choice. By default, this is `taproom`.
 
-2. Navigate to the subfolder `ParksApi`.
-
-3. In your command line, input as separate commands:\
+2. In your command line, input as separate commands:\
 `$ npm install`\
 `$ npm run build`\
 `$ npm start`
 
-4. Be patient! `npm install` can take some time to finish.
+3. Be patient! `npm install` can take some time to finish.
 
-5. If all goes well, the command terminal should inform you that a local host has been launched for this program at `http://localhost:3000`. 
+4. If all goes well, the command terminal should inform you that a local host has been launched for this program at `http://localhost:3000`. 
 
 -------------------------------
 -------------------------------
