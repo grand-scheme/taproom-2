@@ -35,10 +35,13 @@ class KegController extends React.Component{
   }
 
   handleSellClick = () => {
-    if (this.state.selectedKeg.inventory > 0) {
-      this.state.selectedKeg.inventory--;
+    const selectedKeg = this.state.selectedKeg;
+    if (selectedKeg.inventory > 0) {
+      selectedKeg.inventory--;
+      this.setState({
+        selectedKeg: selectedKeg
+      })
     }
-    this.setState({ });
   }
 
   handleAddKegToList = (newKeg) => {
