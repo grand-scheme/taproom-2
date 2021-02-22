@@ -10,7 +10,7 @@ This website is a React-built application allowing a user to view the draft menu
 
 The application is structured as pictured below:
 
-![image](.\diagram\diagram.png)
+![image](diagram/diagram.png)
 
 (Text description for this image will be provided at a later date).
 ----------------------
