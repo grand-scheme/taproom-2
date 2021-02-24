@@ -4,6 +4,7 @@ import KegList from './KegList';
 import KegDetail from './KegDetail';
 import ModifyKegList from './ModifyKegList';
 import {kegInventory} from '../data/kegs';
+import { connect } from 'react-redux';
 
 class KegController extends React.Component{
   constructor(props) {
@@ -11,7 +12,7 @@ class KegController extends React.Component{
     this.state = {
       visibleNewKegForm: false,
       visibleEditKegForm: false,
-      kegListAll: kegInventory,
+      kegListAll: kegInventory, // NOTE: going to need to add kegInventory to redux's handling of inventory
       selectedKeg: null
     };
   }
@@ -44,10 +45,18 @@ class KegController extends React.Component{
     }
   }
 
-  handleAddKegToList = (newKeg) => {
-    const newKegListAll = this.state.kegListAll.concat(newKeg);
+  handleAddKegToList = (rdxNewKeg) => {
+    const { dispatch } = this.props;
+    const { id, name, brandName, price, abv, inventory } = rdxNewKeg;
+    const action = {
+      type: 'ADD_KEG',
+      id, name, brandName, price, abv, inventory
+    }
+    dispatch(action)
+
+    // const newKegListAll = this.state.kegListAll.concat(newKeg);
     this.setState({
-      kegListAll: newKegListAll,
+      // kegListAll: newKegListAll,
       visibleNewKegForm: false
     });
   }
@@ -125,4 +134,5 @@ class KegController extends React.Component{
   }
 }
 
+KegController = connect()(KegController);
 export default KegController; 
