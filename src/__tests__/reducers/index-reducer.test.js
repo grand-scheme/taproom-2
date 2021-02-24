@@ -2,6 +2,7 @@ import rootReducer from '../../reducers/index-reducer';
 import { createStore } from 'redux';
 import kegListReducer from '../../reducers/keg-list-reducer';
 import formVisibilityReducer from '../../reducers/form-visibility-reducer';
+import formEditReducer from '../../reducers/form-edit-reducer';
 
 let store = createStore(rootReducer);
 
@@ -55,5 +56,12 @@ describe(
         expect(store.getState().rdxFormVisible)
           .toEqual(formVisibilityReducer( undefined, action ));
     })
-    // end test 5
+    // end test 5 // start test six
+    test(
+      "Check that initial state of formIsEdit matches root",  () => {
+        expect(
+          store.getState().formIsEdit
+        ).toEqual(formEditReducer( undefined, { type: null }));
+      }
+    )
   });
