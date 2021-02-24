@@ -10,7 +10,6 @@ class KegController extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      visibleNewKegForm: false,
       formIsEdit: false,
       selectedKeg: null
     };
@@ -20,14 +19,9 @@ class KegController extends React.Component{
     if (this.state.selectedKeg != null) {
       this.setState({
         formIsEdit: false,
-        visibleNewKegForm: false,
         selectedKeg: null
       });
-    } else {
-      this.setState(prevState => ({
-        visibleNewKegForm: !prevState.visibleNewKegForm
-      }));
-    }
+    } else {}
   }
 
   handleEditClick = () => {
@@ -52,10 +46,6 @@ class KegController extends React.Component{
       id, name, brandName, price, abv, inventory
     }
     dispatch(action)
-
-    this.setState({
-      visibleNewKegForm: false
-    });
   }
 
   handleChangeSelection = (id) => {
