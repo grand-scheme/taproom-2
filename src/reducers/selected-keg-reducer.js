@@ -1,9 +1,11 @@
+import * as c from '../actions/action-types';
+
 export default (state = null, action) => {
   const { selectedKeg } = action;
   switch (action.type) {
-    case 'SELECT_KEG':
+    case c.SELECT_KEG:
       return selectedKeg;
-    case 'REJECT_KEG':
+    case c.REJECT_KEG:
       return null;
     default: 
     return state;
