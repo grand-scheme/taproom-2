@@ -10,7 +10,6 @@ class KegController extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      formIsEdit: false,
       selectedKeg: null
     };
   }
@@ -18,20 +17,19 @@ class KegController extends React.Component{
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        formIsEdit: false,
         selectedKeg: null
       });
     } else {
-      const { dispatch } = this.props;
-      const action = {
-        type: "TOGGLE_FORM"
-      }
-      dispatch(action)
+      const { dispatch } = this.props; 
+      const action = { type: 'TOGGLE_FORM' }
+      dispatch(action);
     }
   }
 
   handleEditClick = () => {
-    this.setState({formIsEdit: true});
+    const { dispatch } = this.props; 
+    const action = {type: 'TOGGLE_EDIT'};
+    dispatch(action);
   }
 
   handleSellClick = () => {
@@ -85,8 +83,10 @@ class KegController extends React.Component{
       id, name, brandName, price, abv, inventory
     }
     dispatch(action)
+
+    const action2 = { type: 'TOGGLE_EDIT' };
+    dispatch(action2);
     this.setState({
-      formIsEdit: false,
       selectedKeg: null
     });
   }
@@ -96,7 +96,7 @@ class KegController extends React.Component{
     let currentVisibleState = null;
     let addKegBtnText = null;
 
-    if (this.state.formIsEdit) {
+    if (this.props.rdxFormIsEdit) {
       currentVisibleState = 
         <ModifyKegList
           keg = {this.state.selectedKeg}
@@ -112,7 +112,7 @@ class KegController extends React.Component{
           onClickingSell = {this.handleSellClick}
         />
         addKegBtnText = "View Kegs on Tap";
-    } else if (this.props.visibleNewKegForm) {
+    } else if (this.props.rdxFormIsVisible) {
       currentVisibleState = 
         <AddNewKeg 
           onCreateNewKeg={this.handleAddKegToList} 
@@ -141,13 +141,15 @@ class KegController extends React.Component{
 
 KegController.propTypes = {
   rdxKegListAll: PropTypes.object,
-  rdxFormVisible: PropTypes.bool
+  rdxFormIsVisible: PropTypes.bool,
+  rdxFormIsEdit: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     rdxKegListAll: state.rdxKegListAll,
-    rdxFormVisible: state.rdxFormVisible
+    rdxFormIsVisible: state.rdxFormIsVisible,
+    rdxFormIsEdit: state.rdxFormIsEdit
   }
 }
 

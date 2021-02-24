@@ -20,18 +20,14 @@ function ModifyKegList(props){
 
   return(
     <>
-      <p>
-        <Information 
-          entryFlag="Modifying Information For: "
-          keg={keg}
-        />
-      </p>
-      <p>
-        <Form 
-          formSubmissionHandler={handleEditKegSubmission} 
-          buttonText="Modify Keg Details"
-        />
-      </p>
+      <Information 
+        entryFlag="Modifying Information For: "
+        keg={keg}
+      />
+      <Form 
+        formSubmissionHandler={handleEditKegSubmission} 
+        buttonText="Modify Keg Details"
+      />
     </>
   );
 }

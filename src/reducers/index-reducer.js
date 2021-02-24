@@ -1,13 +1,14 @@
 import formVisibilityReducer from './form-visibility-reducer';
+import formEditReducer from './form-edit-reducer';
 import kegListReducer from './keg-list-reducer';
 import formEditReducer from './form-edit-reducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers(
   {
-    rdxFormVisible: formVisibilityReducer,
+    rdxFormIsVisible: formVisibilityReducer,
     rdxKegListAll: kegListReducer,
-    formIsEdit: formEditReducer
+    rdxFormIsEdit: formEditReducer
   }
 );
 
