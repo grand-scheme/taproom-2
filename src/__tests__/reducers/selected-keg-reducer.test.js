@@ -26,6 +26,14 @@ describe('selectedKegReducer', () => {
       selectedKeg: kegData };
       expect(selectedKegReducer(null, action))
       .toEqual(kegData);
-    }
-  )
+  });
+  // end test 2
+
+  // test 3
+  test('Should return null value when keg is rejected', () => {
+    action = { type: 'REJECT_KEG' };
+    expect(selectedKegReducer(kegData, action))
+      .toEqual(null);
+    });
+    // end test 3
 })
