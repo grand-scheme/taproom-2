@@ -19,4 +19,13 @@ export const addKeg = (keg) => {
     type: c.ADD_KEG,
     id, name, brandName, price, abv, inventory
   }
-}
+};
+
+export const selectKeg = id => ({
+  type: c.SELECT_KEG,
+  id
+});
+
+export const rejectKeg = () => ({
+  type: c.REJECT_KEG
+});
