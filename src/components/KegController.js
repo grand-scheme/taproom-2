@@ -11,7 +11,7 @@ class KegController extends React.Component{
     super(props);
     this.state = {
       visibleNewKegForm: false,
-      visibleEditKegForm: false,
+      formIsEdit: false,
       selectedKeg: null
     };
   }
@@ -19,7 +19,7 @@ class KegController extends React.Component{
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        visibleEditKegForm: false,
+        formIsEdit: false,
         visibleNewKegForm: false,
         selectedKeg: null
       });
@@ -31,7 +31,7 @@ class KegController extends React.Component{
   }
 
   handleEditClick = () => {
-    this.setState({visibleEditKegForm: true});
+    this.setState({formIsEdit: true});
   }
 
   handleSellClick = () => {
@@ -86,7 +86,7 @@ class KegController extends React.Component{
     }
     dispatch(action)
     this.setState({
-      visibleEditKegForm: false,
+      formIsEdit: false,
       selectedKeg: null
     });
   }
@@ -96,7 +96,7 @@ class KegController extends React.Component{
     let currentVisibleState = null;
     let addKegBtnText = null;
 
-    if (this.state.visibleEditKegForm) {
+    if (this.state.formIsEdit) {
       currentVisibleState = 
         <ModifyKegList
           keg = {this.state.selectedKeg}
