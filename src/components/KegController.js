@@ -21,7 +21,13 @@ class KegController extends React.Component{
         formIsEdit: false,
         selectedKeg: null
       });
-    } else {}
+    } else {
+      const { dispatch } = this.props;
+      const action = {
+        type: "TOGGLE_FORM"
+      }
+      dispatch(action)
+    }
   }
 
   handleEditClick = () => {
@@ -46,6 +52,10 @@ class KegController extends React.Component{
       id, name, brandName, price, abv, inventory
     }
     dispatch(action)
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);
   }
 
   handleChangeSelection = (id) => {
@@ -102,7 +112,7 @@ class KegController extends React.Component{
           onClickingSell = {this.handleSellClick}
         />
         addKegBtnText = "View Kegs on Tap";
-    } else if (this.state.visibleNewKegForm) {
+    } else if (this.props.visibleNewKegForm) {
       currentVisibleState = 
         <AddNewKeg 
           onCreateNewKeg={this.handleAddKegToList} 
