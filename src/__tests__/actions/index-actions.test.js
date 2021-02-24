@@ -1,3 +1,4 @@
+import * as c from '../../actions/action-types';
 import * as actions from '../../actions/index-actions';
 
 describe('keg management action', () => {
@@ -6,7 +7,7 @@ describe('keg management action', () => {
   it('deleteKeg should create DELETE_KEG action', () => {
     expect(actions.deleteKeg(1))
     .toEqual({
-      type: 'DELETE_KEG',
+      type: c.DELETE_KEG,
       id: 1
     });
   });
@@ -16,7 +17,7 @@ describe('keg management action', () => {
   it('toggleForm should create TOGGLE_FORM action', () => {
     expect(actions.toggleForm())
     .toEqual({
-      type: 'TOGGLE_FORM'
+      type: c.TOGGLE_FORM
     });
   });
   // end test 2
@@ -25,7 +26,7 @@ describe('keg management action', () => {
   it('toggleEdit should create TOGGLE_EDIT action', () => {
     expect(actions.toggleEdit())
     .toEqual({
-      type: 'TOGGLE_EDIT'
+      type: c.TOGGLE_EDIT
     });
   });
   // end test 3
@@ -41,7 +42,7 @@ describe('keg management action', () => {
       inventory: 4
     }))
     .toEqual({
-      type: 'ADD_KEG',
+      type: c.ADD_KEG,
       id: 4,
       name: 'Quatre',
       brandName: 'Arba`a',

@@ -1,3 +1,4 @@
+import * as c from '../../actions/action-types';
 import rootReducer from '../../reducers/index-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
 import formVisibilityReducer from '../../reducers/form-visibility-reducer';
@@ -36,7 +37,7 @@ test("Check that initial state of rdxFormIsVisible matches root", () => {
     // start test 4
 test("Check that ADD_KEG action still works", () => {
     const action = {
-      type: 'ADD_KEG', 
+      type: c.ADD_KEG, 
       id: 3,
       name: 'Trois',
       brandName: 'Thalatha',
@@ -52,7 +53,7 @@ test("Check that ADD_KEG action still works", () => {
     
     // start test 5
 test("Check that TOGGLE_FORM still works", () => {
-    const action = { type: "TOGGLE_FORM" }
+    const action = { type: c.TOGGLE_FORM }
     store.dispatch(action);
     expect(store.getState().rdxFormIsVisible)
       .toEqual(formVisibilityReducer(undefined, action ));
@@ -68,7 +69,7 @@ test("Check that TOGGLE_FORM still works", () => {
 
     // start test 7
     test("Check that TOGGLE_EDIT still works", () => {
-      const action = { type: "TOGGLE_EDIT" }
+      const action = { type: c.TOGGLE_EDIT }
       store.dispatch(action);
       expect(store.getState().rdxFormIsEdit)
         .toEqual(formEditReducer(undefined, action ));

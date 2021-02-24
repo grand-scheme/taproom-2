@@ -1,3 +1,4 @@
+import * as c from '../../actions/action-types';
 import kegListReducer from '../../reducers/keg-list-reducer';
 
 describe('kegListReducer', () => {
@@ -42,7 +43,7 @@ describe('kegListReducer', () => {
   test('Should add new keg to list', () => {
     const {id, name, brandName, price, abv, inventory} = kegData;
     action = {
-      type: 'ADD_KEG',
+      type: c.ADD_KEG,
       id, name, brandName, price, abv, inventory
     };
 
@@ -54,7 +55,7 @@ describe('kegListReducer', () => {
   // end test 2 // start test 3
   test('Should delete a keg', () => {
     action = {
-      type: 'DELETE_KEG',
+      type: c.DELETE_KEG,
       id: 1
     };
     expect(kegListReducer(testState, action))
