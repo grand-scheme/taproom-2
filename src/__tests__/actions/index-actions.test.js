@@ -29,4 +29,26 @@ describe('keg management action', () => {
     });
   });
   // end test 3
+
+  // start test 4
+  it('addKeg should create ADD_KEG action', () => {
+    expect(actions.addKeg({
+      id: 4,
+      name: 'Quatre',
+      brandName: 'Arba`a',
+      price: 4,
+      abv: 4,
+      inventory: 4
+    }))
+    .toEqual({
+      type: 'ADD_KEG',
+      id: 4,
+      name: 'Quatre',
+      brandName: 'Arba`a',
+      price: 4,
+      abv: 4,
+      inventory: 4
+    });
+  });
+  // end test 4
 });
