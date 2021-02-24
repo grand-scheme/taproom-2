@@ -15,7 +15,8 @@ describe(
         expect(rootReducer({}, { type: null }))
         .toEqual({
           rdxKegListAll: {},
-          rdxFormVisible: false
+          rdxFormVisible: false,
+          formIsEdit: false
         });
     })
     // end test 1 // start test 2
