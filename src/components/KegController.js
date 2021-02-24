@@ -54,9 +54,7 @@ class KegController extends React.Component{
     }
     dispatch(action)
 
-    // const newKegListAll = this.state.kegListAll.concat(newKeg);
     this.setState({
-      // kegListAll: newKegListAll,
       visibleNewKegForm: false
     });
   }
@@ -69,19 +67,26 @@ class KegController extends React.Component{
   }
 
   handleDeletingKeg = (id) => {
-    const newKegListAll = this.state.kegListAll.filter(keg => keg.id !== id);
+    const { dispatch } = this.props;
+    const action = {
+      type: 'DELETE_KEG',
+      id
+    }
+    dispatch(action);
     this.setState({
-      kegListAll: newKegListAll,
       selectedKeg: null
     });
   }
 
-  handleEditKeg = (kegToModify) => {
-    const modifiedKegList = this.state.kegListAll
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToModify);
+  handleEditKeg = (rdxKegToModify) => {
+    const { dispatch } = this.props;
+    const { id, name, brandName, price, abv, inventory } = rdxKegToModify;
+    const action = {
+      type: 'ADD_KEG',
+      id, name, brandName, price, abv, inventory
+    }
+    dispatch(action)
     this.setState({
-      kegListAll: modifiedKegList,
       visibleEditKegForm: false,
       selectedKeg: null
     });
