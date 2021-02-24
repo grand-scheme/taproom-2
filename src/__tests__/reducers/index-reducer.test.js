@@ -12,7 +12,7 @@ test("Should return default state if no action is taken", () => {
     expect(rootReducer({}, { type: null }))
     .toEqual({
       rdxKegListAll: {},
-      rdxFormVisible: false
+      rdxFormIsVisible: false
     });
   })
     // end test 1 
@@ -25,8 +25,8 @@ test("Check that initial state of rdxKegListAll matches root", () => {
     // end test 2 
       
     // start test 3
-test("Check that initial state of rdxFormVisible matches root", () => {
-    expect(store.getState().rdxFormVisible)
+test("Check that initial state of rdxFormIsVisible matches root", () => {
+    expect(store.getState().rdxFormIsVisible)
       .toEqual(formVisibilityReducer( undefined, { type: null } ));
   })
     // end test 3 
@@ -52,7 +52,7 @@ test("Check that ADD_KEG action still works", () => {
 test("Check that TOGGLE_FORM still works", () => {
     const action = { type: "TOGGLE_FORM" }
     store.dispatch(action);
-    expect(store.getState().rdxFormVisible)
+    expect(store.getState().rdxFormIsVisible)
       .toEqual(formVisibilityReducer(undefined, action ));
   })
     // end test 5

@@ -4,7 +4,7 @@ import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers(
   {
-    rdxFormVisible: formVisibilityReducer,
+    rdxFormIsVisible: formVisibilityReducer,
     rdxKegListAll: kegListReducer
   }
 );

@@ -10,7 +10,7 @@ class KegController extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      rdxFormIsVisible: false,
+      // rdxFormIsVisible: false,
       rdxFormIsEdit: false,
       selectedKeg: null
     };
@@ -20,13 +20,13 @@ class KegController extends React.Component{
     if (this.state.selectedKeg != null) {
       this.setState({
         rdxFormIsEdit: false,
-        rdxFormIsVisible: false,
+        // rdxFormIsVisible: false,
         selectedKeg: null
       });
     } else {
-      this.setState(prevState => ({
-        rdxFormIsVisible: !prevState.rdxFormIsVisible
-      }));
+      const { dispatch } = this.props; 
+      const action = { type: 'TOGGLE_FORM' }
+      dispatch(action);
     }
   }
 
@@ -53,9 +53,10 @@ class KegController extends React.Component{
     }
     dispatch(action)
 
-    this.setState({
-      rdxFormIsVisible: false
-    });
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);
   }
 
   handleChangeSelection = (id) => {
@@ -112,7 +113,7 @@ class KegController extends React.Component{
           onClickingSell = {this.handleSellClick}
         />
         addKegBtnText = "View Kegs on Tap";
-    } else if (this.state.rdxFormIsVisible) {
+    } else if (this.props.rdxFormIsVisible) {
       currentVisibleState = 
         <AddNewKeg 
           onCreateNewKeg={this.handleAddKegToList} 
@@ -140,13 +141,14 @@ class KegController extends React.Component{
 
 
 KegController.propTypes = {
-  rdxKegListAll: PropTypes.object
+  rdxKegListAll: PropTypes.object,
+  rdxFormIsVisible: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     rdxKegListAll: state.rdxKegListAll,
-    
+    rdxFormIsVisible: state.rdxFormIsVisible
   }
 }
 
