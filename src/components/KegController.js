@@ -10,8 +10,6 @@ class KegController extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      // rdxFormIsVisible: false,
-      // rdxFormIsEdit: false,
       selectedKeg: null
     };
   }
@@ -19,8 +17,6 @@ class KegController extends React.Component{
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        // rdxFormIsEdit: false,
-        // rdxFormIsVisible: false,
         selectedKeg: null
       });
     } else {
@@ -34,7 +30,6 @@ class KegController extends React.Component{
     const { dispatch } = this.props; 
     const action = {type: 'TOGGLE_EDIT'};
     dispatch(action);
-    // this.setState({rdxFormIsEdit: true});
   }
 
   handleSellClick = () => {
@@ -93,7 +88,6 @@ class KegController extends React.Component{
     const action2 = { type: 'TOGGLE_EDIT' };
     dispatch(action2);
     this.setState({
-      // rdxFormIsEdit: false,
       selectedKeg: null
     });
   }
