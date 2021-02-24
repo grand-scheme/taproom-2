@@ -140,12 +140,14 @@ class KegController extends React.Component{
 
 
 KegController.propTypes = {
-  rdxKegListAll: PropTypes.object
+  rdxKegListAll: PropTypes.object,
+  rdxFormVisible: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    rdxKegListAll: state
+    rdxKegListAll: state.rdxKegListAll,
+    rdxFormVisible: state.rdxFormVisible
   }
 }
 
