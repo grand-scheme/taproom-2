@@ -3,7 +3,6 @@ import AddNewKeg from './AddNewKeg';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
 import ModifyKegList from './ModifyKegList';
-import {kegInventory} from '../data/kegs';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -13,7 +12,6 @@ class KegController extends React.Component{
     this.state = {
       visibleNewKegForm: false,
       visibleEditKegForm: false,
-      // kegListAll: kegInventory, // NOTE: going to need to add kegInventory to redux's handling of inventory
       selectedKeg: null
     };
   }
