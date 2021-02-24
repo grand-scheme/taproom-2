@@ -95,6 +95,7 @@ where `NEW-FOLDER` is where you would type the name of the folder you would like
 - Visual Studio Code
 - node.js
 - React
+- Redux
 -------------------------------
 ## License
 - _GNU AGPLv3_  
