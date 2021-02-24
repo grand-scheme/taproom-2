@@ -5,8 +5,12 @@ export default (state = {}, action) => {
       return Object.assign({}, state, {
         [id] : {
           id, name, brandName, price, abv, inventory
-        }
+        },
       });
+    case 'DELETE_KEG':
+      let newState = {...state};
+      delete newState[id];
+      return newState;
     default:
       return state;
   }
