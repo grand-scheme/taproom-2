@@ -10,8 +10,8 @@ class KegController extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      visibleNewKegForm: false,
-      visibleEditKegForm: false,
+      rdxFormIsVisible: false,
+      rdxFormIsEdit: false,
       selectedKeg: null
     };
   }
@@ -19,19 +19,19 @@ class KegController extends React.Component{
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        visibleEditKegForm: false,
-        visibleNewKegForm: false,
+        rdxFormIsEdit: false,
+        rdxFormIsVisible: false,
         selectedKeg: null
       });
     } else {
       this.setState(prevState => ({
-        visibleNewKegForm: !prevState.visibleNewKegForm
+        rdxFormIsVisible: !prevState.rdxFormIsVisible
       }));
     }
   }
 
   handleEditClick = () => {
-    this.setState({visibleEditKegForm: true});
+    this.setState({rdxFormIsEdit: true});
   }
 
   handleSellClick = () => {
@@ -54,7 +54,7 @@ class KegController extends React.Component{
     dispatch(action)
 
     this.setState({
-      visibleNewKegForm: false
+      rdxFormIsVisible: false
     });
   }
 
@@ -86,7 +86,7 @@ class KegController extends React.Component{
     }
     dispatch(action)
     this.setState({
-      visibleEditKegForm: false,
+      rdxFormIsEdit: false,
       selectedKeg: null
     });
   }
@@ -96,7 +96,7 @@ class KegController extends React.Component{
     let currentVisibleState = null;
     let addKegBtnText = null;
 
-    if (this.state.visibleEditKegForm) {
+    if (this.state.rdxFormIsEdit) {
       currentVisibleState = 
         <ModifyKegList
           keg = {this.state.selectedKeg}
@@ -112,7 +112,7 @@ class KegController extends React.Component{
           onClickingSell = {this.handleSellClick}
         />
         addKegBtnText = "View Kegs on Tap";
-    } else if (this.state.visibleNewKegForm) {
+    } else if (this.state.rdxFormIsVisible) {
       currentVisibleState = 
         <AddNewKeg 
           onCreateNewKeg={this.handleAddKegToList} 
@@ -145,7 +145,8 @@ KegController.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    rdxKegListAll: state
+    rdxKegListAll: state.rdxKegListAll,
+    
   }
 }
 
