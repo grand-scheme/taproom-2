@@ -65,4 +65,18 @@ describe(
         ).toEqual(formEditReducer( undefined, { type: null }));
       }
     )
+    // end test 6 // start test 7
+    test(
+      "Check that TOGGLE_EDIT still works",  () => {
+        const action = {
+          type: "TOGGLE_EDIT"
+        }
+        store.dispatch(action);
+        expect(
+          store.getState().formIsEdit)
+        .toEqual(
+          formEditReducer( undefined, action)
+        );
+      })
+    // end test 7
   });
