@@ -1,3 +1,4 @@
+import * as c from '../../actions/action-types';
 import selectedKegReducer from '../../reducers/selected-keg-reducer';
 
 describe('selectedKegReducer', () => {
@@ -22,8 +23,10 @@ describe('selectedKegReducer', () => {
 
   // test 2
   test('Should return the keg specified when specified', () => {
-    action = { type: 'SELECT_KEG',
-      selectedKeg: kegData };
+    action = { 
+      type: c.SELECT_KEG,
+      selectedKeg: kegData
+    };
       expect(selectedKegReducer(null, action))
       .toEqual(kegData);
   });

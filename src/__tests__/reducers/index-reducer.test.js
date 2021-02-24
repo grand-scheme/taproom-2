@@ -1,10 +1,10 @@
-import * as c from '../../actions/action-types';
 import rootReducer from '../../reducers/index-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
 import formVisibilityReducer from '../../reducers/form-visibility-reducer';
 import formEditReducer from '../../reducers/form-edit-reducer';
 import selectedKegReducer from '../../reducers/selected-keg-reducer';
 import { createStore } from 'redux';
+import * as c from '../../actions/action-types';
 
 let store = createStore(rootReducer);
 
