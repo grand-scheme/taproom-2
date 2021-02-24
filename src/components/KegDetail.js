@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Information from "./reusable/Information";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Information from './reusable/Information';
 
 function KegDetail(props){
   const { keg, onClickingDelete, onClickingEdit, onClickingSell } = props;
@@ -8,7 +8,7 @@ function KegDetail(props){
   return(
     <>
       <Information 
-        entryFlag=""
+        entryFlag=''
         keg={keg}/>
 
         <button onClick={()=> onClickingSell(keg.id) }>

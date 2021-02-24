@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import Form from "./reusable/Form";
+import PropTypes from 'prop-types';
+import Form from './reusable/Form';
 
 function AddNewKeg(props){
   function handleNewKegSubmission(e){
@@ -19,7 +19,7 @@ function AddNewKeg(props){
     <>
       <h1>Add new keg to inventory</h1>
       <Form 
-        formSubmissionHandler={handleNewKegSubmission} buttonText="Add New Keg"
+        formSubmissionHandler={handleNewKegSubmission} buttonText='Add New Keg'
       />
     </>
   );

@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 function Information(props){
   const { keg } = props;
   
   let stockMessage = null;
-  const inStock = "Approximately " + keg.inventory + " pints available.";
-  const lowStock = inStock + " Almost Empty!";
-  const outOfStock = "Out of Stock!";
+  const inStock = 'Approximately ' + keg.inventory + ' pints available.';
+  const lowStock = inStock + ' Almost Empty!';
+  const outOfStock = 'Out of Stock!';
 
   if (keg.inventory === 0) {
     stockMessage = outOfStock;

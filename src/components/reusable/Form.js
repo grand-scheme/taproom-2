@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { v4 } from "uuid";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function Form(props){
   return(
@@ -8,45 +8,45 @@ function Form(props){
       <form onSubmit={props.formSubmissionHandler}>
         <input 
           type='hidden'
-          name="id"
+          name='id'
           value= {v4()}
         />
-        <label htmlFor="name">Brew Name: </label>
+        <label htmlFor='name'>Brew Name: </label>
         <input 
           type='text'
-          name="name"
-          placeholder="Brew Name"
+          name='name'
+          placeholder='Brew Name'
         />
         <br />
-        <label htmlFor="brandName">Brewing Company Brand Name: </label>
+        <label htmlFor='brandName'>Brewing Company Brand Name: </label>
         <input 
           type='text'
-          name="brandName"
-          placeholder="Brand Name"
+          name='brandName'
+          placeholder='Brand Name'
         />
         <br />
-        <label htmlFor="price">$: </label>
+        <label htmlFor='price'>$: </label>
         <input 
           type='text'
-          name="price"
-          placeholder="Price per Pint"
+          name='price'
+          placeholder='Price per Pint'
         />
         <br />
-        <label htmlFor="abv">ABV: </label>
+        <label htmlFor='abv'>ABV: </label>
         <input 
           type='text'
-          name="abv"
-          placeholder="Alcohol by Volume"
+          name='abv'
+          placeholder='Alcohol by Volume'
         />
         <br />
-        <label htmlFor="inventory">Inventory In Stock: </label>
+        <label htmlFor='inventory'>Inventory In Stock: </label>
         <input 
           type='text'
-          name="inventory"
-          placeholder="Pints In Keg"
+          name='inventory'
+          placeholder='Pints In Keg'
         />
         <br />
-        <button type="submit"> {props.buttonText} </button>
+        <button type='submit'> {props.buttonText} </button>
       </form>
     </>
   );

@@ -90,7 +90,7 @@ class KegController extends React.Component{
           keg = {this.state.selectedKeg}
           onUpdateKeg = {this.handleEditKeg}
         />
-        addKegBtnText = "View Kegs on Tap"
+        addKegBtnText = 'View Kegs on Tap'
     } else if (this.state.selectedKeg !=null) {
       currentVisibleState = 
         <KegDetail 
@@ -99,20 +99,20 @@ class KegController extends React.Component{
           onClickingEdit = {this.handleEditClick}
           onClickingSell = {this.handleSellClick}
         />
-        addKegBtnText = "View Kegs on Tap";
+        addKegBtnText = 'View Kegs on Tap';
     } else if (this.props.rdxFormIsVisible) {
       currentVisibleState = 
         <AddNewKeg 
           onCreateNewKeg={this.handleAddKegToList} 
         />
-        addKegBtnText = "View Kegs on Tap"
+        addKegBtnText = 'View Kegs on Tap'
     } else {
       currentVisibleState = 
         <KegList 
           kegList={this.props.rdxKegListAll} 
           onSelectKeg={this.handleChangeSelection} 
         />
-        addKegBtnText = "Add Keg to Inventory"
+        addKegBtnText = 'Add Keg to Inventory'
     }
     
     return(

@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import Form from "./reusable/Form";
-import Information from "./reusable/Information";
+import PropTypes from 'prop-types';
+import Form from './reusable/Form';
+import Information from './reusable/Information';
 
 function ModifyKegList(props){
   const { keg } = props;
@@ -21,12 +21,12 @@ function ModifyKegList(props){
   return(
     <>
       <Information 
-        entryFlag="Modifying Information For: "
+        entryFlag='Modifying Information For: '
         keg={keg}
       />
       <Form 
         formSubmissionHandler={handleEditKegSubmission} 
-        buttonText="Modify Keg Details"
+        buttonText='Modify Keg Details'
       />
     </>
   );

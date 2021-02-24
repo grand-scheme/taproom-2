@@ -5,8 +5,8 @@ describe('kegListReducer', () => {
   let action;
   const kegData = { // for test 2
     id: 0,
-    name: "Zéro",
-    brandName: "Sifr",
+    name: 'Zéro',
+    brandName: 'Sifr',
     price: 0,
     abv: 0,
     inventory: 0
@@ -15,16 +15,16 @@ describe('kegListReducer', () => {
   const testState = { // for test 3
     1: {
       id: 1,
-      name: "Un",
-      brandName: "Wahid",
+      name: 'Un',
+      brandName: 'Wahid',
       price: 1,
       abv: 1,
       inventory: 1
     },
     2: {
       id: 2,
-      name: "Deux",
-      brandName: "Ithnan",
+      name: 'Deux',
+      brandName: 'Ithnan',
       price: 2,
       abv: 2,
       inventory: 2
@@ -62,8 +62,8 @@ describe('kegListReducer', () => {
       .toEqual({
         2: {
           id: 2,
-          name: "Deux",
-          brandName: "Ithnan",
+          name: 'Deux',
+          brandName: 'Ithnan',
           price: 2,
           abv: 2,
           inventory: 2

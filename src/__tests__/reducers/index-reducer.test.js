@@ -7,10 +7,10 @@ import { createStore } from 'redux';
 
 let store = createStore(rootReducer);
 
-describe("rootReducer", () => {
+describe('rootReducer', () => {
     
     // start test 1
-test("Should return default state if no action is taken", () => {
+test('Should return default state if no action is taken', () => {
     expect(rootReducer({}, { type: null }))
     .toEqual({
       rdxKegListAll: {},
@@ -21,21 +21,21 @@ test("Should return default state if no action is taken", () => {
     // end test 1 
     
     // start test 2
-test("Check that initial state of rdxKegListAll matches root", () => {
+test('Check that initial state of rdxKegListAll matches root', () => {
     expect(store.getState().rdxKegListAll)
       .toEqual(kegListReducer(undefined, { type: null }));
   })
     // end test 2 
       
     // start test 3
-test("Check that initial state of rdxFormIsVisible matches root", () => {
+test('Check that initial state of rdxFormIsVisible matches root', () => {
     expect(store.getState().rdxFormIsVisible)
       .toEqual(formVisibilityReducer( undefined, { type: null } ));
   })
     // end test 3 
     
     // start test 4
-test("Check that ADD_KEG action still works", () => {
+test('Check that ADD_KEG action still works', () => {
     const action = {
       type: c.ADD_KEG, 
       id: 3,
@@ -52,7 +52,7 @@ test("Check that ADD_KEG action still works", () => {
     // end test 4 
     
     // start test 5
-test("Check that TOGGLE_FORM still works", () => {
+test('Check that TOGGLE_FORM still works', () => {
     const action = { type: c.TOGGLE_FORM }
     store.dispatch(action);
     expect(store.getState().rdxFormIsVisible)
@@ -61,14 +61,14 @@ test("Check that TOGGLE_FORM still works", () => {
     // end test 5
 
     // start test 6
-    test("Check that initial state of rdxFormIsEdit matches root", () => {
+    test('Check that initial state of rdxFormIsEdit matches root', () => {
       expect(store.getState().rdxFormIsEdit)
         .toEqual(formEditReducer( undefined, { type: null } ));
     })
     // end test 6
 
     // start test 7
-    test("Check that TOGGLE_EDIT still works", () => {
+    test('Check that TOGGLE_EDIT still works', () => {
       const action = { type: c.TOGGLE_EDIT }
       store.dispatch(action);
       expect(store.getState().rdxFormIsEdit)
