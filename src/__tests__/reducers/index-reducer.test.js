@@ -1,6 +1,7 @@
 import rootReducer from '../../reducers/index-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
 import formVisibilityReducer from '../../reducers/form-visibility-reducer';
+import formEditReducer from '../../reducers/form-edit-reducer';
 import { createStore } from 'redux';
 
 let store = createStore(rootReducer);
@@ -12,7 +13,8 @@ test("Should return default state if no action is taken", () => {
     expect(rootReducer({}, { type: null }))
     .toEqual({
       rdxKegListAll: {},
-      rdxFormIsVisible: false
+      rdxFormIsVisible: false,
+      rdxFormIsEdit: false
     });
   })
     // end test 1 
@@ -56,6 +58,23 @@ test("Check that TOGGLE_FORM still works", () => {
       .toEqual(formVisibilityReducer(undefined, action ));
   })
     // end test 5
+
+    // start test 6
+    test("Check that initial state of rdxFormIsEdit matches root", () => {
+      expect(store.getState().rdxFormIsEdit)
+        .toEqual(formEditReducer( undefined, { type: null } ));
+    })
+    // end test 6
+
+    // start test 7
+    test("Check that TOGGLE_EDIT still works", () => {
+      const action = { type: "TOGGLE_EDIT" }
+      store.dispatch(action);
+      expect(store.getState().rdxFormIsEdit)
+        .toEqual(formEditReducer(undefined, action ));
+    })
+
+
 
     // end test suite  
 });
