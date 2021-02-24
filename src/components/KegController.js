@@ -11,14 +11,14 @@ class KegController extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      selectedKeg: null
+      rdxSelectedKeg: null
     };
   }
 
   handleClick = () => {
-    if (this.state.selectedKeg != null) {
+    if (this.state.rdxSelectedKeg != null) {
       this.setState({
-        selectedKeg: null
+        rdxSelectedKeg: null
       });
     } else {
       const { dispatch } = this.props; 
@@ -34,11 +34,11 @@ class KegController extends React.Component{
   }
 
   handleSellClick = () => {
-    const selectedKeg = this.state.selectedKeg;
-    if (selectedKeg.inventory > 0) {
-      selectedKeg.inventory--;
+    const rdxSelectedKeg = this.state.rdxSelectedKeg;
+    if (rdxSelectedKeg.inventory > 0) {
+      rdxSelectedKeg.inventory--;
       this.setState({
-        selectedKeg: selectedKeg
+        rdxSelectedKeg: rdxSelectedKeg
       })
     }
   }
@@ -52,9 +52,9 @@ class KegController extends React.Component{
   }
 
   handleChangeSelection = (id) => {
-    const selectedKeg = this.props.rdxKegListAll[id];
+    const rdxSelectedKeg = this.props.rdxKegListAll[id];
     this.setState({
-      selectedKeg: selectedKeg
+      rdxSelectedKeg: rdxSelectedKeg
     });
   }
 
@@ -63,7 +63,7 @@ class KegController extends React.Component{
     const action = a.deleteKeg(id);
     dispatch(action);
     this.setState({
-      selectedKeg: null
+      rdxSelectedKeg: null
     });
   }
 
@@ -75,7 +75,7 @@ class KegController extends React.Component{
     const action2 = a.toggleEdit();
     dispatch(action2);
     this.setState({
-      selectedKeg: null
+      rdxSelectedKeg: null
     });
   }
 
@@ -87,14 +87,14 @@ class KegController extends React.Component{
     if (this.props.rdxFormIsEdit) {
       currentVisibleState = 
         <ModifyKegList
-          keg = {this.state.selectedKeg}
+          keg = {this.state.rdxSelectedKeg}
           onUpdateKeg = {this.handleEditKeg}
         />
         addKegBtnText = 'View Kegs on Tap'
-    } else if (this.state.selectedKeg !=null) {
+    } else if (this.state.rdxSelectedKeg !=null) {
       currentVisibleState = 
         <KegDetail 
-          keg = {this.state.selectedKeg} 
+          keg = {this.state.rdxSelectedKeg} 
           onClickingDelete = {this.handleDeletingKeg}
           onClickingEdit = {this.handleEditClick}
           onClickingSell = {this.handleSellClick}
