@@ -21,9 +21,9 @@ export const addKeg = (keg) => {
   }
 };
 
-export const selectKeg = id => ({
+export const selectKeg = (keg) => ({
   type: c.SELECT_KEG,
-  id
+  keg
 });
 
 export const rejectKeg = () => ({
