@@ -5,6 +5,7 @@ import KegDetail from './KegDetail';
 import ModifyKegList from './ModifyKegList';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as a from './../actions/index-actions';
 
 class KegController extends React.Component{
   constructor(props) {
@@ -21,14 +22,14 @@ class KegController extends React.Component{
       });
     } else {
       const { dispatch } = this.props; 
-      const action = { type: 'TOGGLE_FORM' }
+      const action = a.toggleForm();
       dispatch(action);
     }
   }
 
   handleEditClick = () => {
     const { dispatch } = this.props; 
-    const action = {type: 'TOGGLE_EDIT'};
+    const action = a.toggleEdit();
     dispatch(action);
   }
 
@@ -44,15 +45,9 @@ class KegController extends React.Component{
 
   handleAddKegToList = (rdxNewKeg) => {
     const { dispatch } = this.props;
-    const { id, name, brandName, price, abv, inventory } = rdxNewKeg;
-    const action = {
-      type: 'ADD_KEG',
-      id, name, brandName, price, abv, inventory
-    }
+    const action = a.addKeg(rdxNewKeg);
     dispatch(action)
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
@@ -65,10 +60,7 @@ class KegController extends React.Component{
 
   handleDeletingKeg = (id) => {
     const { dispatch } = this.props;
-    const action = {
-      type: 'DELETE_KEG',
-      id
-    }
+    const action = a.deleteKeg(id);
     dispatch(action);
     this.setState({
       selectedKeg: null
@@ -77,14 +69,10 @@ class KegController extends React.Component{
 
   handleEditKeg = (rdxKegToModify) => {
     const { dispatch } = this.props;
-    const { id, name, brandName, price, abv, inventory } = rdxKegToModify;
-    const action = {
-      type: 'ADD_KEG',
-      id, name, brandName, price, abv, inventory
-    }
+    const action = a.addKeg(rdxKegToModify);
     dispatch(action)
 
-    const action2 = { type: 'TOGGLE_EDIT' };
+    const action2 = a.toggleEdit();
     dispatch(action2);
     this.setState({
       selectedKeg: null
